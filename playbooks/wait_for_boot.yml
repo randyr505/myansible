@@ -8,4 +8,4 @@
         mymin: 6
         delaynum: 30
         retriesnum: 90
-      when: patchtool_install_result is defined and patchtool_install_result.stdout.find('Instructing ansible to reboot server') != -1
+      # when: patchtool_install_result is defined and patchtool_install_result.stdout.find('Instructing ansible to reboot server') != -1
