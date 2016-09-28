@@ -1,0 +1,16 @@
+---
+  #
+  # This playbook doesn't run standalone. You must include this in your playbook 
+  # and pass it the delaynum and retriesnum
+  #
+  - name: Sleeping 1 minute before checking if server is up
+    pause: minutes=1
+
+  - name: Waiting for server to boot (up to {{ delaynum * retriesnum }} seconds, {{ delaynum }} second intervals)
+    become: no
+    local_action: shell ssh {{ inventory_hostname }} uptime | sed -e 's/^.*up //' | awk '/min/{print $1}'
+    register: up
+    ignore_errors: true
+    until: up.stdout <= '{{ mymin }}' and up.stdout != ""
+    delay: '{{ delaynum }}'
+    retries: '{{ retriesnum }}'
