@@ -1,9 +1,10 @@
 # Playbooks
 
 ***
-wait_for_bootup.yml -- I created this playbook because the playbooks I found just didn't work as expected. I needed this on AIX for my patchtool playbook
-An example of one that didn't work for me was from
-https://support.ansible.com/hc/en-us/articles/201958037-Reboot-a-server-and-wait-for-it-to-come-back
+wait_for_boot.yml -- I created this playbook and task because the playbooks I found just didn't work for me.
+  I needed this on AIX for my patchtool playbook
+  An example of one that didn't work for me was from
+  https://support.ansible.com/hc/en-us/articles/201958037-Reboot-a-server-and-wait-for-it-to-come-back
 
 - name: restart machine
   shell: sleep 2 && shutdown -r now "Ansible updates triggered"
