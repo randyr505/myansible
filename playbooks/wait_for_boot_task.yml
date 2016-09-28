@@ -1,7 +1,7 @@
 ---
   #
-  # This playbook doesn't run standalone. You must include this in your playbook 
-  # and pass it the delaynum and retriesnum
+  # This playbook doesn't run standalone. You must include this in your playbook as a task
+  # and pass it the delaynum and retriesnum variables
   #
   - name: Sleeping 1 minute before checking if server is up
     pause: minutes=1
